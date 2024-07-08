@@ -1,6 +1,8 @@
 using Base62.Conversion;
 using MediatR;
 
+namespace UrlShortener.Domain.Features.UrlShortening;
+
 public class AddShortenedUrl
 {
     public record Request(string? Url) : IRequest<Response>;
