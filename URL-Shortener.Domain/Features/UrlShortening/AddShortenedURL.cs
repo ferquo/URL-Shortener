@@ -1,7 +1,7 @@
 using Base62.Conversion;
 using MediatR;
 
-namespace UrlShortener.Domain.Features.UrlShortening;
+namespace UrlShortener.Application.Features.UrlShortening;
 
 public class AddShortenedUrl
 {
