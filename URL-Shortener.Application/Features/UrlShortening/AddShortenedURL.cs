@@ -1,13 +1,14 @@
 using Base62.Conversion;
+using FluentResults;
 using MediatR;
 
 namespace UrlShortener.Application.Features.UrlShortening;
 
-public class AddShortenedUrl
+public sealed class AddShortenedUrl
 {
-    public record Request(string? Url) : IRequest<Response>;
-    public record Response(Guid Id, string? OriginalUrl, string? ShortenedURL);
-    public class Handler : IRequestHandler<Request, Response>
+    public sealed record Request(string? Url) : IRequest<Result<Response>>;
+    public sealed record Response(Guid Id, string? OriginalUrl, string? ShortenedURL);
+    public sealed class Handler : IRequestHandler<Request, Result<Response>>
     {
         // private readonly DbConnection _db;
 
@@ -16,14 +17,18 @@ public class AddShortenedUrl
         //     _db = db;
         // }
 
-        public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
+        public async Task<Result<Response>> Handle(Request request, CancellationToken cancellationToken)
         {
             var referenceDate = new DateTime(2024, 01, 01);
             var secondsSinceReferenceDate = (DateTime.UtcNow - referenceDate).TotalSeconds;
             var shortenedUri = Base62Converter.Encode((long)secondsSinceReferenceDate);
             var shortenedUrl = $"localhost:8080/{shortenedUri}";
 
-            return await Task.FromResult(new Response(Guid.NewGuid(), request.Url, shortenedUrl));
+            return await Task.FromResult(
+                Result.Ok(
+                    new Response(Guid.NewGuid(), request.Url, shortenedUrl)
+                )
+            );
         }
     }
 }
