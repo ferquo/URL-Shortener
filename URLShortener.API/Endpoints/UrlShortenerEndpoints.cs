@@ -1,14 +1,20 @@
-﻿namespace URLShortener.API;
+﻿using MediatR;
+using UrlShortener.Application.Features.UrlShortening;
+
+namespace URLShortener.API;
 
 public static class UrlShortenerEndpoints
 {
     public static void MapUrlShortenerEndpoints(this WebApplication app)
     {
-        app.MapGet("/api/shortener", () =>
+        app.MapPost("/api/urls", async (IMediator mediator, AddShortenedUrl.Request request) =>
         {
-            return Results.Ok("Hello, World!");
+            var result = await mediator.Send(new AddShortenedUrl.Request("www.facebook.com"));
+            return result.MapToHttpResult();
         })
-        .WithName("GetUrlShortener")
+        .Produces<AddShortenedUrl.Response>(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status400BadRequest)
+        .WithName("PostShortenUrl")
         .WithOpenApi();
     }
 }

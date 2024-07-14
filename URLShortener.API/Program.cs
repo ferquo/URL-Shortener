@@ -1,9 +1,11 @@
+using UrlShortener.Application.Features.UrlShortening;
 using URLShortener.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(AddShortenedUrl).Assembly));
 
 var app = builder.Build();
 
