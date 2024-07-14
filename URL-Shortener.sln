@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URL-Shortener.Application", "URL-Shortener.Application\URL-Shortener.Application.csproj", "{FBAEF741-7BDD-4FDD-9B19-1083D41E16F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.Application", "URLShortener.Application\URLShortener.Application.csproj", "{FBAEF741-7BDD-4FDD-9B19-1083D41E16F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URL-Shortener.Debug", "URL-Shortener.Debug\URL-Shortener.Debug.csproj", "{EBA1F356-A591-45D6-BAF2-C155FA6158B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.Domain", "URLShortener.Domain\URLShortener.Domain.csproj", "{809E8E96-95D6-468B-AB7A-DF4614D0F846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URL-Shortener.Domain", "URL-Shortener.Domain\URL-Shortener.Domain.csproj", "{809E8E96-95D6-468B-AB7A-DF4614D0F846}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.API", "URLShortener.API\URLShortener.API.csproj", "{ACA1A07A-726D-4B5D-B916-342F88AFBBC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{FBAEF741-7BDD-4FDD-9B19-1083D41E16F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBAEF741-7BDD-4FDD-9B19-1083D41E16F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBAEF741-7BDD-4FDD-9B19-1083D41E16F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBA1F356-A591-45D6-BAF2-C155FA6158B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBA1F356-A591-45D6-BAF2-C155FA6158B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBA1F356-A591-45D6-BAF2-C155FA6158B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBA1F356-A591-45D6-BAF2-C155FA6158B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{809E8E96-95D6-468B-AB7A-DF4614D0F846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{809E8E96-95D6-468B-AB7A-DF4614D0F846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{809E8E96-95D6-468B-AB7A-DF4614D0F846}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{809E8E96-95D6-468B-AB7A-DF4614D0F846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA1A07A-726D-4B5D-B916-342F88AFBBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA1A07A-726D-4B5D-B916-342F88AFBBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA1A07A-726D-4B5D-B916-342F88AFBBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA1A07A-726D-4B5D-B916-342F88AFBBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
